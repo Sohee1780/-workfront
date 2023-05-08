@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    HTML
+    <form>
+        <label for="email">이메일:</label>
+        <input type="email" id="email" name="email" required><br><br>
+        <label for="name">이름:</label>
+        <input type="text" id="name" name="name" required><br><br>
+        <label for="birthday">생년월일:</label>
+        <input type="date" id="birthday" name="birthday" required><br><br>
+        <input type="submit" value="회원가입">
+    </form>
+    
+    <script>
+        let form = document.querySelector('form');
+        form.addEventListener('submit', function (event) {
+            event.preventDefault();
+            let birthdate = document.getElementById("birthdate").value;
+            let age = calculateAge(birthdate);
+            document.getElementById("age").value = age;
+            document.getElementById("age").setAttribute("hidden", true);
+            let email = document.getElementById('email');
+            let name = document.getElementById('name');
+            let birthday = document.getElementById('birthday');
+            if (!email.checkValidity()) {
+                alert("올바른 이메일 형식으로 입력하세요.");
+                return;
+            }
+            if (name.value.length < 2) {
+                alert("이름은 최소 2글자 이상 입력하세요.");
+                return;
+            }
+            let today = new Date();
+            let age = today.getFullYear() - new Date(birthday.value).getFullYear();
+            if (age < 18) {
+                alert("만 18세 이상만 가입 가능합니다.");
+                return;
+            }
+            form.submit();
+        });
+    </script>
+</body>
+</html>

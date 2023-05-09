@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <form>
+        <h1>납품관리</h1>
+        <fieldset>
+            <legend>납품자 정보</legend>
+            <ol>
+                <li><label for='name'>납품자명 : </label><input type='text' name='name' id='name' placeholder='name'></li><br>
+                <li><label for='email'>emil : </label><input type='email' name='email' id='email' placeholder='answs@naver.com'></li><br>
+                <li><label>홈페이지 : <input type='url' name='url' id='url' value='http://'></label></li><br>
+            </ol>
+        </fieldset>
+        <br>
+        <fieldset>
+            <legend>납품정보</legend>
+            <ul>
+                <li><label for='pName'>상품명 : </label><input type='text' name='pName' id='pName'></li><br>
+                <li><label for='pAmount'>납품수량 : </label><input type='number'  name='pAmount' id='pAmount' min='100' placeholder='최소 100'></li><br>
+                <li><label for='pGrade'>납품등급 : </label><input type='range'  name='pGrade' id='pGrade' min='0' max='100' ></li><br>
+                <li><label for='bigo'>기타사항 : </label><textarea  name='bigo' id='bigo' cols='20' rows='2'></textarea></li><br>
+            </ul>
+        </fieldset>
+        <br>
+        <input type='submit' value='send message'>
+    </form>
+</body>
+</html>

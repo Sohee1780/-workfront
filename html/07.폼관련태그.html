@@ -53,7 +53,9 @@
             <legend>회원정보</legend>
             <!--
                 laber 태그 : <input>태그와 같은 폼요소에 레이블을 붙일때 사용
-                <label for='id명'>레이블명<input id='id명'></label>
+                             라벨을 이용해서 포커싱을 해줄수있음
+                <label for='id명'></label>레이블명<input id='id명'>
+                <laber>레이블명<input id='id명'></label> label 안에 input이 있으면 for 생략가능
             -->
             <label>아이디 : <input type='text'></label><br>
             <label>비밀번호 : <input type='password'></label>
@@ -69,12 +71,192 @@
     <hr>
     <h2>텍스트와 관련된 input태그들</h2>
     <form>
-        <!--
-            type='text'
-            한줄짜리 텍스트를 입력 할 수 있는 텍스트 박스
-        -->
-        아이디 : <input type='text' name='userId' size =20 maxlength='15' placeholder='아이디를 입력해주세요'>
+        <ul>
+            <!--
+                type='text'
+                한줄짜리 텍스트를 입력 할 수 있는 텍스트 박스
+                value : 기본값
+            -->
+            <li>
+                아이디 : <input type='text' name='userId' size =20 maxlength='15' placeholder='아이디를 입력해주세요.'>
+            </li>
+            <!--
+                type='password'
+                비밀번호를 입력 할 수 있는 텍스트 상자
+                사용자의 입력 값을 확인할 수 없다
+            -->
+            <li>
+                비밀번호 : <input type='password' name='userPw' size='20' maxlength='15' placeholder='비밀번호를 입력하세요.'
+                            required>
+            </li>
+            <li>
+                <!--
+                    email|search|url|tel
+                    겉모습은 텍스트 필드와 비슷하지만
+                    각각이 정보에 맞게 세분화된 기능을 제공하는 텍스트 상자이다.
+                -->
+                <!--
+                    type='email'
+                    submit 될 때 이메일 형식을 체크해준다.
+                -->
+                이메일 : <input type="email" name="userEmail" id="userEmail">
+            </li>
+            <li>
+                <!--
+                    type = 'url'
+                    submit될때 http:// https://가 붙어있는지 확인
+                -->
+                홈페이지 : <input type='url' name='homepage' value='https://' placeholder='홈페이지를 입력해주세요'>
+            </li>
+            <li>
+                <!--
+                    type='search'
+                    검색어 입력후 오른쪽에 X버튼이 생겨서 검색어 삭제가 쉽다
+                    검색이 입력시 입력필드의 색상이 하늘색으로 변경된다
+                -->
+                검색 : <input type='search' name='searchText' id='searchText' placeholder='검색할 내용을 입력'>
+            </li>
+            <li>
+                <!-- 
+                    datalist 태그
+                    텍스트 필드에서 데이터 목록 중 값을 선택하여 입력
+                -->
+                색상 : <input type='text' name='color' list='myColor'>
+                <datalist id='myColor'>
+                    <option value='black'>검정색</option>
+                    <option value='white'>흰색</option>
+                    <option value='skyblue'>하늘색</option>
+                </datalist>
+            </li>
+            <input type="submit" value="전송">
+            <!-- 폼 안의 입력 요소들을 모두 초기화 -->
+            <input type="reset" value="초기화"> 
+        </ul>
+    </form>
 
+    <h3>숫자와 관련된 input 태그들</h3>
+    <form>
+        <!--
+            type='number'
+            입력창에 숫자를 입력하는 것이 기본이지만, 브라우저에 따라서 스핀 박스가 표시되기도 함
+            (스핀박스 : 입력창 오른쪽에 위/아래 화살표 버튼)
+        --> 
+        <input type='number' name='amount' id='amount' value='0' min='0' max='100' step='5'><br>
+        <!--
+            type='range' : 슬라이드바를 통한 숫자 지정 가능
+        -->
+        <input type='range' name='point' id='point' min='0' max='1000' step='100' value='300'><br>
+        <input type='submit' value='전송'>
+        <input type='reset' value='초기화'>
+    </form>
+    
+    <h3>날짜/시간 관련 input 태그들</h3>
+    <form>
+        <!-- type='date|month|week|time|datetime|datetime_local' -->
+        date : <input type='date' name='date' id='date'>
+        <input type='date' name='date1' id='date1' value='2023-05-09'>
+        <br>
+        month : <input type='month' name='month' id='month'>
+        <input type='month' name='month1' id='month1' value='2023-05'>
+        <br>
+        time : <input type='time' name='time' id='time'>
+        <input type='time' name='time1' id='time1' value='10:42'>
+        <br>
+        datetime : 크롬, ie, 엣지에서 지원되지 않음->datetime-local로 대체<br>
+        <input type='datetime'><br>
+        datetime-local : <input type='datetime-local' name='datetime-local' id='datetime-local'>
+        <br>
+        week : <input type='week' name='week' id='week'>
+        <br>
+        <input type='submit' value='전송'>
+        <input type='reset' value='초기화'>
+    </form>
+    
+    <h3>라디오 버튼과 체크박스</h3>
+    <form>
+        <!--
+            type='radio'
+            여러 항목 중 한 가지만 선택해야 할 경우 사용
+            태그 여러개를 선언하여 하나의 용도로 사용할 경우
+            name속성의 값이 같아야한다.
+        -->
+        <fieldset>
+            <legend>성별</legend>
+            <input type='radio' name='gender' value='M'>남자
+            <input type='radio' name='gender' value='F'>여자
+        </fieldset>
+        <input type='submit' value='전송'>
+        <input type='reset' value='초기화'>
+        <!--
+            type='checkbox'
+            여러 항목 중 여러가지를 선택해도 가능할 경우 사용
+            태그 여러개를 선언하여 하나의 용도로 사용할 경우
+            name속성의 값이 같아야한다. 
+        -->
+        <fieldset>
+            <legend>취미</legend>
+            <!-- 선택된 값이 전송됩니다. -->
+            <!-- checked : 기본으로 선택해 놓는 항목 -->
+            <input type='checkbox' name='hobby' value='baseball' checked> 야구
+            <input type='checkbox' name='hobby' value='football'> 축구
+            <input type='checkbox' name='hobby' value='basketball'> 농구
+        </fieldset>
+        <input type='submit' value='전송'>
+        <input type='reset' value='초기화'>
+    </form>
+    <h3>기타 input 태그들</h3>
+    <form>
+        색상 : <input type='color' name='color' id='color'>
+        <br>
+        파일선택 : <input type='file' name='file' id='file'>
+        <br>
+        <input type='hidden' name='hiddenValue' value='1'>
+        <br>
+        <input type='button' value='button'>
+        <input type='submit' value='submit'>
+        <input type='reset' value='reset'>
+        <br>
+        <button>전송</button>
+        <button type='submit'><b>전송</b></button>
+        <button type='reset'>초기화</button>
+        <button type='button'>버튼</button>
+
+        <!-- 이미지 버튼 만들기 -->
+        <input type='image' value='img버튼' src='images/login.png' alt='로그인버튼'>
+    </form>
+    <h3>드롭다운 목록 select</h3>
+    <form>
+        <!--
+            select 태그와 option태그
+            사용자가 내용을 입력하는 것이 아닌
+            여러 옵션 중에서 선택하게 하고 싶을 때 사용하는 드롭 다운 목록
+        -->
+        국적
+        <select>
+            <optgroup label='아시아'>
+                <!-- selected : 기본값 -->
+                <option value='ko' selected>한국</option>
+                <option value='ch'>중국</option>
+                <option value='jp'>일본</option>
+            </optgroup>
+            <optgroup label='아메리카'>
+                <option value='us'>미국</option>
+            </optgroup>
+            <option value='...' label='기타'></option>
+        </select><br>
+        <!--
+            textarea 태그
+            input type='text' 태그와 비슷하지만 여러 줄을 입력할 수 있다.
+        -->
+        <textarea name='terea' placeholder='내용을 입력해 주세요' cols='50' rows='20' style='resize:none;'></textarea>
+        <br>
+        <!-- progress 태그 -->
+        <!-- 작업 시작을 0으로 하고 최대값에서 
+             얼마나 진행되었는지 숫자로 표현한다. -->
+        progress : <progress value='30' max='100'></progress>
+        <!-- meter -->
+        <!-- 전체 크기중에서 얼마나 차지하고 있는지 표현할 때 사용한다. -->
+        meter : <meter min='0' max='100' value='95' low='60' high='90'></meter>
     </form>
 </body>
 </html>

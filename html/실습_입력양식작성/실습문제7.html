@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <h1>주문하기</h1>
+    <form>
+        <p><label for='userName'>고객명 : <input type='text' name='userName' id='userName'></label></p>
+        <p><label for='userTel'>전화번호 : <input type='tel' name='userTel' id='userTel'></label></p>
+        <p><label for='userEmail'>E-mail : <input type='email' name='userEmail' id='userEmail'></label></p>
+
+        <fieldset>
+            <legend>피자 사이즈</legend>
+            <!-- 라벨을 붙여주어 라벨이 선택되어도 요소가 선택된것과 같은 효과-->
+            <input type='radio' name='size' id='size_s' value='S'><label for='size_s'>Small</label><br><br>
+            <input type='radio' name='size' id='size_m' value='M'><label for='size_m'>Medium</label><br><br>
+            <input type='radio' name='size' id='size_l' value='L' checked><label for='size_l'>Large</label>
+        </fieldset>
+
+        <fieldset>
+            <legend>토핑 선택</legend>
+            <input type='checkbox' name='toping' value='bakon' id='bakon'><label for='bakon'>베이컨</label><br><br>
+            <input type='checkbox' name='toping' value='cheese' id='cheese'><label for='cheese'>치즈</label><br><br>
+            <input type='checkbox' name='toping' value='onion' id='onion'><label for='onion'>양파</label><br><br>
+            <input type='checkbox' name='toping' value='mushroom' id='mushroom'><label for='mushroom' >버섯</label>
+        </fieldset>
+
+        <p>희망배송시간 : <input type='time' name='dtime'></p>
+        <p>배송 시 요청사항 : <textarea cols='20' rows=3'></textarea></p>
+        <input type='submit' value='주문하기'>
+    </form> 
+</body>
+</html>

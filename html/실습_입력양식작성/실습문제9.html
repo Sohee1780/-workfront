@@ -1,0 +1,77 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>회원가입</title>
+</head>
+<body>
+    <form>
+        <h1>회원가입</h1>
+
+        <fieldset>
+            <legend>필수 입력 사항</legend>
+            <table>
+                <tr>
+                    <th><laber for='userID'>ID</laber></th>
+                    <td><input type='text' name='userID' id='userID' size='30' placeholder='아이디 10글자 이내'></td>
+                    <td><button>중복확인</button></td>
+                </tr>
+                <tr>
+                    <th><label for='userPW'>비밀번호</label></th>
+                    <td><input type='password' name='userPW' id='userPW' size='30' placeholder='영문,숫자,특수문자 포함 8자 이상'></td>
+                    
+                </tr>
+                <tr>
+                    <th><label for='ruserPW'>비밀번호 확인</label></th>
+                    <td><input type='password' name='ruserPW' id='ruserPW' size='30'></td>
+                    
+                </tr>
+                <tr>
+                    <th><label for='email'>Email</label></th>
+                    <td><input type='email' name='email' id='email' size='30'></td>
+                    <td>
+                        <select>
+                            <option name='email' id='email'>직접입력</option>
+                            <option value='naver.com'>@naver.com</option>
+                            <option value='gmail.com'>@gmail.com</option>
+                        </select>
+                    </td>
+                </tr>
+            </table>
+        </fieldset>
+
+        <fieldset>
+            <legend>추가 청보</legend>
+            프로필 사진 : <input type='file' name='picture' id='picture'>
+            <br><br>
+            성별 : 
+            <input type='radio' name='gender' value='M' checked>남자
+            <input type='radio' name='gender' value='F'>여자
+            <br><br>
+            생년월일 : <input type='date' name='birth' id='birth'>
+            <br><br>
+            취미 : 
+            <br>
+            <input type='checkbox' name='hobby' value='baseball'>야구
+            <input type='checkbox' name='hobby' value='basketball'>농구
+            <input type='checkbox' name='hobby' value='football'>축구
+            <br>
+            <input type='checkbox' name='hobby' value='study' checked>공부
+            <input type='checkbox' name='hobby' value='music'>음악감상
+            <br>
+            <input type='checkbox' name='hobby' value='etc'> 
+                <label for='etc'>기타 : </label><input type='text' name='etc' id='etc'>
+            <br><br>
+            자기소개
+            <br>
+            <input type='text' size='50'>??
+        </fieldset>
+        <br>
+        <input type='submit' value='회원가입'>
+        <input type='reset' value='다시입력'>
+        <button>이전으로</button>
+    </form>
+</body>
+</html>

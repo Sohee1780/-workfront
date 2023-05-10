@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>CSS 기본 선택자</title>
+    <style>
+        * {
+            margin:0;
+        }
+        /*타입선택자
+            태그명 { 스타일 규칙 }*/
+        p {
+            font-style: italic;
+        }
+        /* class 선택자 : 태그가 가지고 있는
+            class속성을 이용하여 스타일을 적용 */
+        .title {
+            font-size: 3em;
+        }
+        /* id 선택자 : 태그가 가진 ID속성을 이용하여 스타일을 적용 */
+        #content {
+            font-weight: 800;
+        }
+        span {
+            color:red;
+            font-weight: 900;
+        }
+        h1 {
+            border : 1px solid #000;
+            padding: 10px;
+            background-color: #666;
+        }
+    </style>
+</head>
+<body>
+    <h1>CSS 기본 선택자</h1>
+    <h3>전체선택자</h3>
+    <img src='../images/salad.jpg'>
+
+    <p class='title'>
+        수습 국원 모집
+    </p>
+    <p id='content'>
+        방송에 관심 있는 새내기 여러분 환영합니다
+        교내 방송국에서 신입생을 대상으로 수습 국원을 모집합니다. 학부나 전공에 상관없습니다.
+    </p>
+    <span>
+        평소 방송에 관심있었던 여러 학우들의 지원바랍니다.
+    </span>
+</body>
+</html>

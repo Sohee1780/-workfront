@@ -1,0 +1,101 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>CSS 텍스트 스타일</title>
+    <!-- 내부스타일 -->
+    <style>
+
+    </style>
+
+    <!-- 외부스타일 -->
+    <link rel="stylesheet" href="03.css텍스트스타일.css">
+</head>
+<body>
+    <h1>텍스트 스타일</h1>
+    <h2>1.font-family</h2>
+    텍스트에 글꼴을 지정할 때 사용
+    <p id='ff1'>글꼴 변경 테스트1</p>
+    <p id='ff2'>글꼴 변경 테스트2</p>
+    <p id='ff3'>글꼴 변경 테스트3</p>
+
+    <p class='web-font'>
+        웹 폰트 사용<br>
+        <a href='http://fonts.google.com/'>구글 웹 폰트</a>
+    </p>
+    <h2>2.font-size</h2>
+    텍스트의 크기를 변경할 때 사용
+    <ul>
+        <li id='size1'>px 테스트</li>
+        <li id='size2'>em 테스트</li>
+        <li id='size3'>% 테스트</li>
+    </ul>
+    <h2>3.font-weight</h2>
+    텍스트의 두께를 변경할 때 사용
+    <ul>
+        <li>원래 굵기</li>
+        <li id='fw1'>굵은 굵기</li>
+        <li id='fw2'>가늘게</li>
+        <li id='fw3'>굵게</li>
+    </ul>
+    <h2>4.font-variant</h2>
+    작은대문자(소문자 크기의 대문자)로 변경할 때 사용
+    <p>I LOVE YOU</p>
+    <p id='fv'>i love you</p>
+
+    <h2>5.font-style</h2>
+    텍스트의 기울임을 지정할 때 사용
+    <ul>
+        <li>기울임 없음</li>
+        <li id='fs1'>italic 기울임</li>
+        <li id='fs2'>oblique 기울임</li>
+    </ul>
+
+    <hr>
+
+    <h2>6.color</h2>
+    텍스트의 색상을 지정할때 사용
+    <ul>
+        <li id='c-name'>색상명으로 지정</li>
+        <li id='c-16'>16진수 값으로 지정</li>
+        <li id='c-rgb'>rgb로 설정</li>
+        <li id='c-rgba'>rgba로 설정</li>
+    </ul>
+
+    <h2>7. text-decoration</h2>
+    텍스트에 줄을 그을때 사용(위, 아래, 중간)
+    <ul>
+        <li id='td-none'>none</li>
+        <li id='td-underline'>underline</li>
+        <li id='td-overline'>overline</li>
+        <li id='td-line-through'>line-through</li>
+        <a href='test.html'>test링크</a>
+    </ul>
+    <h2>8.text-shadow</h2>
+    텍스트에 그림자 효과를 추가
+    <br>
+    text-shadow : 가로거리 세로거리 번짐정도 색상
+
+    양수 글자의 오른쪽, 아래쪽
+    음수 글자의 왼쪽, 위쪽
+
+    번짐정도(생략가능) : 양수값 그림자가 모든 방향으로 퍼져 나가므로 크게 표현
+
+    <div id='dg'>
+        <span id='ts1'>HTML5</span>
+        <span id='ts2'>CSS</span>
+        <span id='ts3'>JAVA SCPRIPT</span>
+    </div>
+    <h2>9.text-transform</h2>
+    영문텍스트의 대소문자 변환
+    <ul>
+        <li id='tt1'>none</li>
+        <li id='tt2'>capitalize</li>
+        <li id='tt3'>uppercase</li>
+        <li id='tt4'>LOWER CASE</li>
+    </ul>
+
+</body>
+</html>

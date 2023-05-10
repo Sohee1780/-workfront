@@ -1,0 +1,139 @@
+        @import url('https://fonts.googleapis.com/css2?family=Black+Han+Sans&display=swap');
+        #ff1{
+            font-family: "궁서체";
+        }
+        #ff2{
+            font-family: '굴림체';
+        }
+        /* 
+            글꼴이 없는 경우를 대비해서
+            ,를 이용하여 여러글꼴을 나열 할 수 있음
+        */
+        #ff3{
+            font-family: '없는글꼴','궁서>ㅇ<','고딕';
+        }
+        /* 웹폰트 */
+        h1{
+            font-family: 'Black Han Sans', sans-serif;
+        }
+        .web-font {
+            font-family: 'Black Han Sans', sans-serif;
+        }
+        #size1 {
+            font-size : 30px;
+        }
+        #size2 {
+            font-size : 2em;
+        }
+        #size3 {
+            font-size : 150%;
+        }
+        #fw1{
+            font-weight : bold;
+        }
+        #fw2{
+            font-weight : lighter;
+        }
+        #fw3{
+            font-weight : 900;
+        }
+        #fv{
+            /*
+                small-caps : 소문자를 대문자로(소문자크기의) 바꿉니다
+                normal : 바꾸지 않음
+                */
+            font-variant:small-caps;
+        }
+        #fs1{
+            font-style: italic;
+        }
+        #fs2{
+            font-style: oblique;
+        }
+        /* 
+            글자색 변경하기 
+            - 색상이름 표기법
+            - 16진수 표기법
+            - rgb/rgba 표기법
+            - hsl/hsla 표기법
+        */
+        #c-name{
+            /* 이름으로 지정 : 16가지 기본색상을 포함하여 총 216가지 (웹안정색상, 모든 웹브라우저에서 표현가능)*/
+            color:red;
+        }
+        #c-16{
+            /*
+            #과 16진수 6자리를 합쳐서 색상을 표현
+            앞에서부터 2자리씩 묶어 빨강, 초록, 파랑 색상의 양을 표시
+            (중복된 숫자인경우 3자리로 표현 가능 #000000 -> #000 */
+            color:#fff;
+            background-color: #000;
+            padding : 20px;
+            font-size : 2em;
+        }
+        #c-rgb{
+            /*
+            빨강 초록 파랑의 양을 0~255까지의 수로 표현 
+            */
+            color:rgb(255,0,0);
+
+        }
+        #c-rgba{
+            /*
+                a : 투명도 0~1 0 : 투명 1 : 불투명
+            */
+            color:rgba(255,0,0,0.253);
+            background-color: hsl(113, 41%, 49%);
+        }
+        /*
+            hsl방식
+            색상(hue), 채도(saturation), 밝기(light)
+        */
+        #td-none{
+            text-decoration: none;
+        }
+        #td-underline{
+            text-decoration: underline;
+        }
+        #td-overline{
+            text-decoration: overline;
+        }
+        #td-line-through{
+            text-decoration: line-through;
+        }
+        li {
+            padding : 10px;
+            /*선의 두께, 선 스타일, 색상*/
+            border : 1px dotted;
+        }
+        a{
+            text-decoration: none;
+            color : #666;
+            font-size : 1.5em;
+        }
+        #ts1{
+            color : blueviolet;
+            font-weight: 900;
+            font-size : 1.5em;
+            text-shadow: 2px 2px black;
+            background-color: bisque;
+        }
+        #ts2{
+            text-shadow: 3px 3px yellowgreen;
+        }
+        #ts3{
+            font-weight: 900;
+            text-shadow: -10px -10px red;
+        }
+        #tt1{
+            text-transform: none;
+        }
+        #tt2{
+            text-transform: capitalize;
+        }
+        #tt3{
+            text-transform: uppercase;
+        }
+        #tt4{
+            text-transform: lowercase;
+        }

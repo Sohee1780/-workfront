@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>CSS 선택자 우선순위</title>
+    <style>
+        /*구글폰트*/
+        @import url('https://fonts.googleapis.com/css2?family=Black+Han+Sans&display=swap');
+        h1 {
+            color:yellow;
+        }
+        h1 {
+            color:blueviolet;
+            background-color: aquamarine;
+        }
+        #test1 {
+            background-color: pink;
+        }
+        .pink_bg {
+            background-color: rgb(132, 119, 248);
+        }
+        p {
+            /* background-color: red !important;
+            color: white !important; */
+            font-family: 'Black Han Sans', sans-serif;
+            font-size: 2em;
+        }
+        .red {
+            color:red;
+        }
+    </style>
+</head>
+<body>
+    <h1 class='pink_bg'>선택자 우선순위</h1>
+    <p>
+        기본적으로 위에서 아래로 적용
+        같은 요소에 다양한 선택자로 CSS속성이 설정된 경우
+        우선순위에 따라 스타일이 적용된다.<br>
+        <span class='red'>태그 선택자 < 클래스 선택자 < 아이디 선택자 < 인라인 선택자 < important</span>
+    </p>
+    
+    <div id='test1' class='pink_bg' style='background-color: olive;'>우선순위 테스트1</div>
+    <p id='test2' class='pink_bg'>우선순위 테스트2</p>
+</body>
+</html>

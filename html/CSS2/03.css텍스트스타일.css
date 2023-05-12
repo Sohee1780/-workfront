@@ -137,3 +137,34 @@
         #tt4{
             text-transform: lowercase;
         }
+        .lh1{
+            font-size: 1em;
+            /*줄 간격*/
+            line-height: 1em;
+            /*가로 정렬*/
+            text-align: left;
+        }
+        .lh2{
+            font-size: 2em;
+            line-height: 2em;
+            text-align: right;
+        }
+        .lh3{
+            text-align: center;
+        }
+        .lh4{
+            /*양쪽정렬*/
+            text-align: justify;
+        }
+        table{
+            /* 캡션의 위치 (기본:top)*/
+            caption-side: bottom;
+            /* 테두리 검정색 실선으로 표시 */
+            border: 1px solid #999;
+            /*테두리를 한줄로 표시*/
+            border-collapse:collapse;
+        }
+        th, tr, td{
+            border:1px dotted #999;
+            padding: 10px;
+        }

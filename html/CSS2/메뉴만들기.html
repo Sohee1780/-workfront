@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>메뉴</title>
+    <style>
+        *{
+            margin:0 auto;
+            padding: 0;
+        }
+        ul{
+            list-style:none;
+            /* float해제 */
+            clear: both;
+        }
+        li{
+            /* display: inline-block; */
+            border:1px solid #777;
+            width:100px;
+            height:50px;
+            line-height: 50px;
+            text-align: center;
+            float: left;
+        }
+        a{
+            /*
+                a요소는 inline요소이므로
+                width, height속성을 가지지 못함
+                (영역을 가질수없음 
+                콘텐츠의 영역만 가질 수 있음)
+            
+                ->inline-block으로 변경
+                */
+            display: inline-block;
+            text-decoration: none;
+            width: 100px;
+            height: 50px;
+            border : 1px solid gray;
+
+        }
+    </style>
+</head>
+<body>
+    <ul>
+        <li><a href='#'>메뉴1</a></li>
+        <li><a href='#'>메뉴2</a></li>
+        <li><a href='#'>메뉴3</a></li>
+        <li><a href='#'>메뉴4</a></li>
+    </ul>
+    <ul>
+        <li><a href='#'>메뉴1</a></li>
+        <li><a href='#'>메뉴2</a></li>
+        <li><a href='#'>메뉴3</a></li>
+        <li><a href='#'>메뉴4</a></li>
+    </ul>
+</body>
+</html>

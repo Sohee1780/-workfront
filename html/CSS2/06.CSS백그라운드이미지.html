@@ -1,0 +1,75 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>배경이미지</title>
+    <style>
+        body{
+            height: 100vm;
+            background-image: url(../images/bg2.png);
+            /* 반복제거 */
+            background-repeat: no-repeat;
+            /* 오른쪽 상단으로 위치 지정 */
+            background-position: right top;
+            /* 배경이미지고정 
+                기본값 : scroll*/
+            background-attachment: fixed;
+            /* 여러가지 속성을 줄여서 표기
+            속성값이 다르므로 순서 상관 없음 */
+            background: url(../images/bg4.jpg) no-repeat center bottom fixed;
+        }
+        #container{
+            width: 500px;
+            /* 배경화면 반복 */
+            background-image: url(../images/apple-bg.jpg);
+            background-repeat: no-repeat;
+            background-repeat: repeat-x;
+            background-repeat: repeat-y;
+            /* 배경화면 적용범위 지정 */
+            border: 30px dotted #ccc;
+            padding: 30px;
+            /* border영역까지 포함하여 배경화면 출력 */
+            /* background-clip: border-box; */
+            /* padding영역까지 포함하여 배경화면 출력 */
+            /* background-clip: padding-box; */
+            background-clip: content-box;
+            background-clip: text;
+            -webkit-background-clip: text;
+            color: transparent;
+            font-size:5em;
+            font-weight: 900;
+
+        }
+
+        ul{
+            list-style: none;
+        }
+        li{
+            /*배경이미지 지정*/
+            background-image: url(../images/book-icon.png);
+            /*반복제거*/
+            background-repeat: no-repeat;
+            /*위치지정*/
+            /* 수평 : left center right 백분율 길이값 */
+            /* 수직 : top center bottom 백분율 길이값 */
+            background-position: left center;
+            /* 줄간격 */
+            line-height: 40px;
+            padding-left:50px;
+        }
+    </style>
+</head>
+<body>
+    <div id='container'>This is the content of the element.</div>
+
+    <h1>이지스퍼블리싱</h1>
+    <ul>
+        <li>회사소개</li>
+        <li>도서</li>
+        <li>자료실</li>
+        <li>동영상강의</li>
+    </ul>
+</body>
+</html>

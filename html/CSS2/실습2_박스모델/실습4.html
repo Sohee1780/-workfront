@@ -75,10 +75,32 @@
 			margin: 10px;
 			padding-top: 30px;
 			background-color: rgba(0,0,0,0.507);
+			display:none;
+			text-align: center;
 		}
-		.imgbox:hover+.pricebox{
+		.imgbox:hover+.pricebox, .pribox:hover{
 			position: absolute;
 			top:0px;
+			display: inline-block;
+		}
+		.box{
+			border: 1px solid orange;
+			padding: 20px;
+			text-align: left;
+			margin: 0px;
+			width: 200px;
+			height: 200px;
+		}
+		.borderbox{
+			/*
+			레이아웃을 잡을때
+			box-sizing속성값을 border-box로 잡아주어야
+			박스가 깨지지않고 잘 레이아웃을 잡을수있다
+			컨텐츠+패딩+border*/
+			box-sizing: border-box;
+		}
+		.contentbox{
+			box-sizing: content-box;
 		}
 	</style>
 </head>
@@ -110,5 +132,7 @@
 			<p>Copyright 2012 funnycom</p>
 		</footer>
 	</div>
+	<div class='box borderbox'>borderbox</div>
+	<div class='box contentbox'>contentbox</div>
 </body>
 </html>

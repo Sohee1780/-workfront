@@ -1,0 +1,118 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>고급선택자2</title>
+    <link rel="stylesheet" href="09.고급선택자2.css">
+</head>
+<body>
+    <h4>반응선택자</h4>
+    사용자의 움직임에 따라 달라지는 선택자
+    <pre>
+        1) 사용자가 클릭하는 요소에 스타일 적용
+            선택자:active{
+                스타일 속성: 값;
+                ...
+            }
+        2) 사용자가 마우스를 올려놓는 요소에 스타일 적용
+            선택자:hover{
+                스타일 속성: 값;
+                ...
+            }
+    </pre>
+    <div id='actionTest'></div><br>
+    <div id='hoverTest'></div>
+
+    <h2>5.상태 선택자</h2>
+    입력 양시의 상태에 따라 선택되는 선택자
+    
+    <pre>
+        1) 체크된 상태의 태그
+            선택자 : checked{
+                스타일 속성: 값;
+                ...
+            }
+    </pre>
+
+    <input type='checkbox' name='fruits' id='apple'><label for='apple'>사과</label>
+    <input type='checkbox' name='fruits' id='banana'><label for='banana'>바나나</label>
+    <input type='checkbox' name='fruits' id='peach'><label for='peach'>복숭아</label>
+    <br><br>
+    <pre>
+        2) 초점이 맞춰진 태그 스타일 변경
+            선택자:focus{
+                스타일 속성: 값;
+                ...
+            }
+    </pre>
+
+    <label>아이디<input type='text' id='userId' placeholder='아이디를 입력해주세요'></label><br>
+    <label>패스워드<input type='password' id='userPwd' placeholder='비밀번호를 입력해주세요'></label><br>
+
+    <pre>
+        3) 사용 가능한 태그 선택
+            선택자:enabled{
+                스타일 속성: 값;
+                ...
+            }
+        4) 사용 불가능한 태그 선택
+            선택자:disabled{
+                스타일 속성: 값;
+                ...
+            }
+    </pre>
+
+    <h3>당신의 연령대는?</h3>
+    <select>
+        <option disabled>10대</option>
+        <option>20대</option>
+        <option>30대</option>
+        <option>40대</option>
+        <option>50대</option>
+        <option>60대</option>
+    </select>
+    <br><br>
+    <button>버튼 1</button>
+    <button disabled>버튼 2</button>
+
+    <h2>6.일반 구조 선택자</h2>
+    특정한 위치에 있는 태그를 선택(위치로 구분)
+    <!-- div>p{test $}*5 -->
+    <div id='test2'>
+        <pre>테스트 0</pre>
+        <p>테스트 1</p>
+        <p>테스트 2</p>
+        <p>테스트 3</p>
+        <p>테스트 4</p>
+        <p>테스트 5</p>
+        <pre>테스트 6</pre>
+    </div>
+
+    <h2>7.형제 구조 선택자</h2>
+    특정한 위치에 있는 태그를 선택(태그 별로 구분)
+    <!-- div>p{test $}*5 -->
+    <div id='test3'>
+        <pre>테스트 0</pre>
+        <p>테스트 1</p>
+        <p>테스트 2</p>
+        <p>테스트 3</p>
+        <p>테스트 4</p>
+        <p>테스트 5</p>
+        <pre>테스트 6</pre>
+    </div>
+
+    <h2>8.부정선택자</h2>
+    요소를 제외하고 선택
+    <div id='test4'>
+        <pre>테스트 0</pre>
+        <p>테스트 1</p>
+        <p>테스트 2</p>
+        <p>테스트 3</p>
+        <p>테스트 4</p>
+        <p>테스트 5</p>
+        <pre>테스트 6</pre>
+    </div>
+</body>
+</html>

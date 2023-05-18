@@ -1,0 +1,67 @@
+.trans-test{
+    width: 250px;
+    height: 250px;
+    /* 위치를 지정하기 위해서 포지션 속성을 설정 */
+    position: relative;
+    left: 50px;
+    /* 
+        웹 요소의 스타일 속성이 조금씩 자연스럽게 바뀌도록 함
+
+        기본값 
+        all : 요소의 모든 속성
+        ease : 처음에는 천천히 빨리지다가 끝날때 천천히
+    */
+    transition: 2s;
+}
+
+/* 아이디가 trans1요소에 마우스가 올라온 상태라면 */
+/* transform : 특정 요소의 크기나 형태등 스타일이 바뀌는것 */
+ #trans1:hover{
+              /* transform:  translateX (-50px);; */
+              transform: translateX(50px);                                                                                                                                        
+}
+#trans2:hover{
+    /* 음수 위쪽으로 양수 아래쪽으로 이동 */
+    /* transform: translateY(-50px); */
+    transform: translateY(50px);
+}
+#trans3:hover{
+    /* 대각선 이동 */
+    transform: translate(50px,50px);
+}
+#trans4:hover{
+    /* 가로 확대/축소 */
+    /* transform: scaleX(2); */
+    transform: scaleX(0.5);
+}
+#trans5:hover{
+    /* 세로 확대/축소 */
+    transform: scaleY(2);
+    /* transform: scaleY(0.5); */
+}
+#trans6:hover{
+    /* 확대/축소 */
+    /* transform: scale(2); */
+    transform: scale(0.5);
+}
+#trans7:hover{
+    /* 지정한 각도만큼 회전 */
+    /* transform: scale(2); */
+    transform: rotate(45deg);
+}
+#trans8:hover{
+    /* 지정한 각도만큼 회전 */
+    /* 양수 오른쪽으로 회전 음수 왼쪽으로 회전*/
+    transform: rotate(-45deg);
+}
+
+#trans9:hover{
+    /* 중심축을 가운데로 */
+    transform-origin: center center;
+    transform: rotate(-45deg);
+}
+#trans10:hover{
+    /* 중심축을 왼쪽의 위로 */
+    transform-origin: left top;
+    transform: rotate(-45deg);
+}

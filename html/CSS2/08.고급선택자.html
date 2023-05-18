@@ -1,0 +1,80 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>고급선택자</title>
+     <!--외부문서로 분리-->
+    <link rel='stylesheet' href='08.고급선택자.css'>
+</head>
+<body>
+    <h1>CSS 고급선택자</h1>
+    <h2>1.하위 선택자</h2>
+    부모 요소에 포함된 모든 하위 요소에 스타일을 적용<br>
+    자식, 손자 모두 포함
+
+    <pre>
+        1) 후손 선택자(자식과 손자를 모두 포함)
+            a(부모) b(자식){
+                스타일속성: 값;
+                ...
+            }
+        2) 자식 선택자
+            a(부모) > b(자식){
+                스타일속성: 값;
+                ...
+            }
+    </pre>
+    <section>
+        <h1>예약방법 % 사용요금</h1>
+        <p>온라인 예약 신청</p>
+        <div>
+            <p id='room'>
+                가족실 : 60,000원/일
+            </p>
+            <p>
+                도미토리 : 25,000원/일
+            </p>
+        </div>
+    </section>
+
+    <h2>동위 선택자</h2>
+    동위 관계(같은 레벨)에서 뒤에 위치한 태그를 선택할 때 사용한다
+    <pre>
+        1) a 선택자 뒤에있는 b요소 한개를 선택
+            a + b{
+                스타일 속성: 값;
+                ...
+            }
+        2) a 선택자 뒤에 있는 모든 b 요소 선택
+            a ~ b{
+                스타일 속성: 값;
+                ...
+            }
+    </pre>
+    <div id='div-test'>div1</div>
+    <div>div2</div>
+    <div>div3</div>
+    <div>div4</div>
+    <div>div5</div>
+    
+    <!--ctrl+alt 세로선택 단축키-->
+
+    <h2>3. 속성 선택자</h2>
+    기본 선택자 뒤에 []를 사용하여 속성과 속성값을 사용한다
+    <pre>
+        선택자[속성=속성값]{
+            스타일 속상: 값;
+            ...
+        }
+    </pre>
+
+    <!-- div.div-class#name${div$}*5 -->
+    <div class="div-class" id="name1">div1</div>
+    <div class="div-class p40" id="name2">div2</div>
+    <div class="div-class p40" id="name3">div3</div>
+    <div class="div-class" id="name4">div4</div>
+    <div class="class-div" id="name5">div5</div>
+</body>
+</html>

@@ -1,0 +1,47 @@
+*{
+    margin: 0;
+    box-sizing: border-box;
+}
+.wrap{
+    margin: 0px auto;
+}
+header{
+    width: 800px;
+    height: 150px;
+    background-color: bisque;
+}
+main{
+    width: 800px;
+    height: 600px;
+    background-color: skyblue;
+}
+footer{
+    width: 800px;
+    height: 150px;
+    background-color: rgb(180, 180, 1);
+}
+header .logo{
+    width: 150px;
+    height: 150px;
+    background-color: pink;
+    float: left;
+}
+header nav{
+    width: 650px;
+    height: 150px;
+    background-color: palevioletred;
+    float: left;
+}
+
+main aside{
+    width:35%;
+    height: 100%;
+    background-color: cornflowerblue;
+    float: left;
+}
+main .mainContent{
+    width:65%;
+    height: 100%;
+    background-color: darkslateblue;
+    float: left;
+}

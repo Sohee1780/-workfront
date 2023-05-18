@@ -1,0 +1,114 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>드롭다운메뉴</title>
+    <style>
+        *{
+            margin: 0px;
+            padding: 0px;
+            text-decoration: none;
+            list-style: none;
+            box-sizing: border-box;
+            color: #333;
+        }
+        nav .menu li{
+            float: left;
+            width: 200px;
+            background-color: cornflowerblue;
+            position: relative;
+            text-align: center;
+            /* 높이 지정하면 하위메뉴 겹침 */
+            /* height: 30px; */
+        }
+        nav .menu a{
+            /* 인라인요소이므로 크기를 지정하기위해 속성 변경 */
+            display: inline-block;
+            width: 100%;
+            line-height: 30px;
+            font-size: 1.2em;
+            font-weight: 800;
+            padding: 20px;
+        }
+        nav .menu li a:hover{
+            background-color: darkblue;
+            color: white;
+        }
+        nav .menu .submenu li{
+            padding-left: 20px;
+        }
+        nav .menu .submenu li a{
+            font-size: 1em;
+            font-weight: 700;
+        }
+        nav .menu .submenu{
+            max-height: 0px;
+            /* 부모영역을 벗어나면 숨김처리 */
+            overflow: hidden;
+        }
+        /* + : 형제요소선택 */
+        /* 우선순위에 의해
+        인라인스타일 > ID스타일 > class스타일 > 태그스타일  */
+        nav .menu li a:hover + .submenu, nav .menu .submenu:hover{
+            /* display를 block으로 할 경우 
+            height: auto로 할 경우 
+            transition이 실행안됨 */
+            /* display: block; */
+            /* height: auto; */
+            max-height: 500px;
+        }
+        nav .menu li a:hover span{
+            transform: rotate(45deg);
+            color: white;
+        }
+        .menu li a span{
+            position: absolute;
+            right: 10px;
+            transition: 1s;
+        }
+        
+        /* 자식선택자 : 자식 선택자는 계층구조에서 바로 아래 오는 자식요소만을 선택한다*/
+        /* > 로 구분 */
+        /* ex)  선택자1 > 선택자2 : 선택자1의 자식요소 선택자2만 선택 */
+        /* 자손선택자 :   자식 선택자는 계층구조에서 바로 아래 오는 자식요소만을 선택한다*/
+        /* 공백으로 구분 */
+        /* ex)"선택자1 선택자2" : 선택자1의 자손 중 선택자2를 선택 */
+        /* 그룹선택자 :  서로 다른 선택자가 같은 스타일을 적용할 경우 개별작성하지않고, 
+        선택자를 콤마(,)로 연결하여 한 번에 스타일을 적용하는 방법*/
+        /* 선택자와 선택자는 콤마(,)로 연결하여 다음과 같이 작성→ 선택자1, 선택자2, 선택자3{}  */
+        /* 인접형제선택자 : 계층구조에서 요소 바로 다음에 오는 공생요소를 선택 */
+        /* ex) 선택자1 + 선택자2{} : 선택자1 바로 다음에 오는 동생 선택자2를 선택 */
+    </style>
+</head>
+<body>
+    <header>
+        <nav>
+            <ul class='menu'>
+                <li><a href="">메뉴1</a></li>
+                <li>
+                    <a href="">메뉴2<span>+</span></a>
+                    <!-- 서브메뉴 -->
+                    <ul class='submenu'>
+                        <li><a href="">서브메뉴2-1</a></li>
+                        <li><a href="">서브메뉴2-2</a></li>
+                        <li><a href="">서브메뉴2-3</a></li>
+                    </ul>
+                </li>
+                <li>
+                    <a href="">메뉴3<span>+</span></a>
+                    <!-- 서브메뉴 -->
+                    <ul class='submenu'>
+                        <li><a href="">서브메뉴3-1</a></li>
+                        <li><a href="">서브메뉴3-2</a></li>
+                        <li><a href="">서브메뉴3-3</a></li>
+                    </ul>
+                </li>
+                <li><a href="">메뉴4</a></li>
+                <li><a href="">메뉴5</a></li>
+            </ul>
+        </nav>
+    </header>
+</body>
+</html>

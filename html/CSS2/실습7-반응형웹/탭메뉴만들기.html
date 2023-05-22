@@ -1,0 +1,102 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>탭메뉴 만들기</title>
+    <style>
+        *{
+            box-sizing: border-box;
+        }
+        #tabMenu input[type=radio]{
+            display: none;
+        }
+        #tabMenu label{
+            /* border: 1px solid black; */
+            display: inline-block;
+            padding: 20px;
+            font-weight: 600;
+            color: #ccc;
+            height: 60px;
+        }
+        #tabMenu label:hover{
+            color: black;
+        }
+        /* 활성화된(radio버튼이 체크된 상태) 탭 메뉴 */
+        #tabMenu input:checked + label{
+            border: 1px solid #ccc;
+            background-color: #eee;
+            color: darkred;
+        }
+        .tabContent{
+            display: none;
+            border-top: 1px solid #ccc;
+            padding: 0px 20px;
+            line-height: 2;
+            position: absolute;
+            left:0;
+            top:59px;
+            width: 500px;
+        }
+        #tab_btn_notice:checked ~ #notice, #tab_btn_gallery:checked ~ #gallery{
+            display: block;
+        }
+        #contents{
+            width: 500px;
+            position: relative;
+
+        }
+        #tabMenu{
+            width: 100%;
+        }
+        #gallery ul li{
+            display: inline;
+
+        }
+        #tabMenu ul{
+            padding: 0px;
+        }
+        #gallery ul li img{
+            width: 200px;
+        }
+        #notice ul{
+            padding-left: 20px;
+        }
+        
+    </style>
+</head>
+<body>
+    <div id='contents'>
+        <div id='tabMenu'>
+
+            <input type="radio" name="tabs" id="tab_btn_notice" >
+            <!-- 라벨이 선택되도 checked되어 집니다! -->
+            <label for='tab_btn_notice'>공지사항</label>
+            <input type="radio" name="tabs" id="tab_btn_gallery" checked>
+            <label for='tab_btn_gallery'>갤러리</label>
+            <!-- 공지사항 -->
+            <article id='notice' class='tabContent'>
+                <ul>
+                    <li>게시글1</li>
+                    <li>게시글2</li>
+                    <li>게시글3</li>
+                    <li>게시글4</li>
+                    <li>게시글5</li>
+                </ul>
+            </article>
+    
+            <!-- 갤러리 -->
+            <article id='gallery' class='tabContent'>
+                <ul>
+                    <li><img src='images/cup-1.jpg'></li>
+                    <li><img src='images/cup-2.jpg'></li>
+                    <li><img src='images/cup-3.jpg'></li>
+                    <li><img src='images/cup-4.jpg'></li>
+                </ul>
+            </article>
+
+        </div>
+    </div>
+</body>
+</html>

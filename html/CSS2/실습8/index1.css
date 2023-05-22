@@ -1,0 +1,180 @@
+*{
+    margin: 0px;
+    padding: 0px;
+    text-decoration: none;
+    box-sizing: border-box;
+}
+#container{
+    width: 1200px;
+    height: 850px;
+    margin: 0px auto;
+}
+#container header{
+    width: 100%;
+    height: 100px;
+    background-color: rgb(61, 124, 243);
+    position: relative;
+}
+#logo a{
+    color: white;
+    font-family:'Times New Roman', Times, serif;
+    line-height: 100px;
+    padding-left: 20px;
+    float: left;
+
+}
+
+nav {
+    padding-left: 100px;
+    padding-top: 40px;
+    display: inline-block;
+}
+nav ul{
+    list-style: none;
+    position: absolute;
+    /* left: 300px; */
+}
+#topMenu li{
+    width: 200px;
+    display: inline-block;
+    position: relative;
+    text-align: center;
+
+}
+#topMenu li a{
+    display: inline-block;
+    width: 100%;
+    line-height: 30px;
+    font-weight: 700;
+    padding: 20px;
+    color: white;
+}
+#topMenu li ul{
+    display: none;
+}
+#topMenu li a:hover+.submenu, #topMenu .submenu:hover{
+    display: block;
+}
+
+/* nav .menu li a:hover + .submenu, nav .menu .submenu:hover{ */
+
+#container main{
+    width: 100%;
+    height: 650px;
+}
+#container footer{
+    width: 100%;
+    height: 100px;
+    position: relative;
+}
+
+hr{
+    border: 2px solid black;
+}
+
+footer #bottomMenu ul{
+    display: inline-block;
+    padding-top: 10px;
+
+}
+
+footer #bottomMenu ul li{
+    display: inline-block;
+    padding-left: 20px;
+
+}
+footer #bottomMenu ul li a{
+    display: inline-block;
+    padding-right: 25px;
+    line-height: 30px;
+    height: 30px;
+    text-align: center;
+    color: black;
+}
+footer #bottomMenu ul li:not(:nth-child(4)){
+    border-right: 1px solid gray;
+}
+
+#company{
+    color: gray;
+    padding-top: 50px;
+    padding-left: 20px;
+    font-size: 15px;
+}
+
+#slideShow{
+    padding-bottom: 40px;
+}
+
+#tabMenu input[type=radio]{
+    display: none;
+}
+#tabMenu label{
+    display: inline-block;
+    padding: 20px;
+    font-weight: 600;
+    color: #ccc;
+    height: 60px;
+}
+#tabMenu input:checked + label{
+    border: 1px solid #ccc;
+    background-color: #eee;
+    color: darkred;
+}
+.tabContent{
+    display: none;
+    border-top: 1px solid #ccc;
+    line-height: 2;
+    position: absolute;
+    left:0;
+    top:59px;
+    width: 600px;
+}
+
+#topMenu ul li{
+    display: inline-block;
+}
+
+#tab1:checked ~ #notice, #tab2:checked ~ #gallery{
+    display: block;
+}
+#contents{
+    position: relative;
+}
+#tabMenu{
+    width: 600px;
+}
+#gallery ul li{
+    display: inline;
+}
+#gallery ul{
+    padding-top: 20px;
+
+}
+#notice ul{
+    padding-top: 20px;
+    line-height: 2.5em;
+    margin-left: 20px;
+}
+
+#links{
+    display: inline-block;
+}
+#links ul{
+    top: 20px;
+    position: absolute;
+    list-style: none;
+    margin-left: 630px;
+}
+#links ul li{
+    display: inline-block;
+}
+#links ul li a{
+    display: inline-block;
+    text-align: center;
+    padding-right: 30px;
+    
+}
+span img{
+    border-radius: 50%;
+}

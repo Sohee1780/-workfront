@@ -1,0 +1,194 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>개요 실습 문제</title>
+    <style>
+        .div-test {
+            border: 1px solid;
+            width: 100px;
+            height: 100px;
+            background-color: black;
+        }
+        #area {
+            border: 1px solid;
+            width: 300px;
+            height: 200px;
+            margin-top: 5px;
+        }
+
+        td {
+            width: 50px;
+            height: 50px;
+            text-align: center;
+        }
+    </style>
+</head>
+<body>
+    <h1>개요 실습 문제</h1>
+
+    <hr>
+
+    <h2>문제 1. 색상 조절하기</h2>
+
+    <p>
+        색상 선택 후 변경 버튼을 클릭하면 색상이 변경되도록 만들기
+    </p>
+    <div id="div1" class="div-test"></div>
+    <input id="selectColor" type="color">
+    <button onclick="changeColor();">변경</button>
+
+    <script>
+        function changeColor(){
+            // let a = getComputedStyle(document.querySelector('#div1')).backgroundColor;
+            // div.style : 엘리먼트의 Inline CSS 스타일을 직접가져옴
+            // div.style.backgroundColor
+            // getComputedStyle(document.querySelector('#div1')).backgroundColor
+            let c1 = getComputedStyle(document.querySelector('#div1')).backgroundColor;
+            let c2 = document.querySelector('#selectColor').value;
+
+            var red = parseInt(c2[1]+c2[2], 16);
+            var blue = parseInt(c2[3]+c2[4], 16);
+            var green = parseInt(c2[5]+c2[6], 16);
+            
+            var color = `rgb(${red}, ${blue}, ${green})`;
+
+            console.log(color);
+
+            // document.querySelector('#div1').style.background = c;
+            if(c1==color) {
+                alert('다른 색을 선택해주세요');
+            } else {
+                document.querySelector('#div1').style.background=c2;
+            }
+        }
+    </script>
+    
+    <hr>
+    
+    <h2>문제 2. 크기 변경하기</h2>
+    <p>
+        버튼에 따라 크기 조절이 가능하도록 만들기
+    </p>
+    <div id="div2" class="div-test"></div>
+    <button onclick="setSize('1');">50X50</button>
+    <button onclick="setSize('2');">원본(100X100)</button>
+    <button onclick="setSize('3');">200X200</button>
+
+    <script>
+        function setSize(id){
+            var div2 = document.querySelector('#div2');
+            if(id==1){
+                div2.style.width='50px';
+                div2.style.height='50px';
+            } else if(id==2){
+                div2.style.width='100px';
+                div2.style.height='100px';
+            }else {
+                div2.style.width='200px';
+                div2.style.height='200px';
+            }
+        }
+    </script>
+
+    <hr>
+
+    <h2>문제 3. HTML 태그에 접근</h2>
+    <p>
+        텍스트 박스로 입력받은 데이터를 가져와서 출력하기 <br>
+        (단, 구매자는 태그이름, 상품명은 아이디, 구매 가격은 name값으로 접근)
+    </p>
+
+    <label>구매자 : <input type="text" placeholder="구매자의 이름을 입력하세요."></label> 
+
+    <br><br>
+
+    <label>상품명 : <input type="text" id="pName" placeholder="구매 상품명을 입력하세요."></label>
+
+    <br><br>
+
+    <label>가격 : <input type="text" name="price" placeholder="구매 가격을 입력하세요."></label>
+
+    <br><br>
+
+    <button onclick="printValue();">입력값 출력하기</button>
+
+    <div id="area"></div>
+    <script>
+        function printValue(){
+            // 박스 선택
+            var area = document.querySelector('#area');
+            // document.getElementsByTagName('input')[index]
+            // 태그 이름이 input인 모든 요소를 가져와서 1번째 input을 선택
+            var name = document.getElementsByTagName('input')[1].value;
+            var pName = document.querySelector('#pName').value;
+            var price = document.getElementsByName('price')[0].value;
+
+            area.innerHTML = `${name}님 구매상품은 ${pName}, 구매가격은 ${price}원 입니다.`;
+        }
+    </script>
+    
+
+    <hr>
+
+    <h2>문제 4. 테이블 만들기</h2>
+    <p>
+        prompt()로 사용자로부터 행과 열의 개수를 입력받아 테이블 만들기 <br>
+        아래의 div 태그에 innerHTML 속성을 사용해서 만들어진 테이블 포함한다.
+    </p>
+
+    <button onclick="makeTable();">테이블 생성</button>
+
+    <div id="div3" style="margin-top: 10px;"></div>
+
+    <script>
+        // 함수생성
+        function makeTable(){
+            // 사용자 입력
+            // 행의 개수, 열의  개수
+            var col = window.prompt('행 : ');
+            var row = window.prompt('열 : ');
+            // tr몇번 반복할지
+            // td볓번 반복할지
+            // 콘솔창에 출력
+
+            /*
+                <table border='1'>
+                    <tr>
+                        <td>
+                        </td>
+                    </tr>
+                </table>
+            */
+
+            var table ="<table border='1'>";
+
+            //  열 반복
+            for(let j=1; j<=row; j++) {
+                table += '<tr>'; //열
+                // 행 반복
+                for(let i=1; i<=col; i++){
+                    table +=`<td>컬럼${i}`; //행
+                    table +='</td>';
+                    }
+                table +='</tr>';
+            }
+            table +='</table>';
+
+            document.querySelector('#div3').innerHTML = table;
+        }
+    </script>
+    
+
+
+    <br><br><br><br><br><br>
+    <br><br><br><br><br><br>
+    <br><br><br><br><br><br>
+    <br><br><br><br><br><br>
+    <br><br><br><br><br><br>
+    <br><br><br><br><br><br>
+    <br><br><br><br><br><br>
+</body>
+</html>

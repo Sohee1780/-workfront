@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>grid레이아웃1</title>
+    <style>
+        .wrapper{
+            display: grid;
+            padding: 10px;
+            /* 컬럼의 개수와 크기를 지정 
+                px 고정단위 이므로 컨텐츠가 길어질 경우 짤림 현상이 있을 수 있음*/
+            grid-template-columns: 200px 200px 200px;
+            /* repeat(칸의개수, 크기) */
+            /* 너비가 200px 3개 */
+            grid-template-columns: repeat(3,400px);
+            /* fr(fraction단위) : 그레드컨테이너의 여유공간을 비율로 나눠 설정 */
+            grid-template-columns: repeat(3,1fr);
+
+            /* 행의 개수와 크기를 지정 */
+            /* 최대값 최소값 지정 */
+            grid-template-rows: 100px;
+            /* minmax(최소값, 최대값) */
+            grid-template-rows: repeat(2,minmax(100px,auto));
+
+            /* 줄간격, 컬럼 간격 */
+            gap: 10px;
+            row-gap: 20px;
+            column-gap: 20px;
+        }
+        .item{
+            padding: 10px;
+            background-color: #eee;
+        }
+        .item:nth-child(even){
+            background-color: #ddd;
+        }
+    </style>
+</head>
+<body>
+    <div class="wrapper">
+        <div class="item">Occaecat labore aliqua aliquip velit et.Occaecat labore aliqua aliquip velit et.Occaecat labore aliqua aliquip velit et.</div>
+        <div class="item">Occaecat labore aliqua aliquip velit et.Occaecat labore aliqua aliquip velit et.Occaecat labore aliqua aliquip velit et.</div>
+        <div class="item">Occaecat labore aliqua aliquip velit et.Occaecat labore aliqua aliquip velit et.Occaecat labore aliqua aliquip velit et.</div>
+        <div class="item">Occaecat labore aliqua aliquip velit et.Occaecat labore aliqua aliquip velit et.Occaecat labore aliqua aliquip velit et.</div>
+        <div class="item">Occaecat labore aliqua aliquip velit et.Occaecat labore aliqua aliquip velit et.Occaecat labore aliqua aliquip velit et.</div>
+    </div>
+</body>
+</html>

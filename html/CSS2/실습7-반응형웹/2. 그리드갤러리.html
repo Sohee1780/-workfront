@@ -1,0 +1,126 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>상품 갤러리 만들기</title>
+  <style>
+    *{
+      margin: 5px;
+      padding: 0px;
+      box-sizing: border-box;
+    }
+    .wrapper{
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(300px, 2fr));
+      gap: 10px;
+    }
+    .card{
+      background-color: #fff;
+      padding: 10px;
+      box-shadow: 0px 1px 5px gray;
+    }
+    img{
+      padding: 10px;
+      width: 100%;
+    }
+    .wrapper header{
+      font-size: 1.5rem;
+      padding: 0.5rem;
+    }
+    .wrapper p{
+      padding: 0.5rem;
+      line-height: 1.6em;
+    }
+  </style>  
+</head>
+
+<body>
+  <div style='width: 200px;border: 1px solid gray;'>
+    <img src='images/cup-1.jpg' style='width: 100%;'>
+  </div>
+  <div class="wrapper">
+    <div class="card">
+      <header>
+        <!-- header : 소개 및 탐색에 도움을 주는 콘텐츠를 나타냅니다. 제목, 로고, 검색 폼, 작성자 이름 등의 요소도 포함할 수 있습니다. -->
+        <h3>사진 제목</h3>
+      </header>
+      <!-- figure : 태그는 삽화나 다이어그램, 사진 등과 같이 문서의 주요 흐름과는 독립적인 콘텐츠를 정의할 때 사용 -->
+      <figure>
+        <img src="images\cup-1.jpg">
+      </figure>
+      <p>사진 설명 : Lorem ipsum dolor sit amet, consectetur adipisicing elit. Ullam, numquam. Neque mollitia esse blanditiis facere.</p>
+    </div>
+
+    <div class="card">
+      <header>
+        <h3>사진 제목</h3>
+      </header>
+      <figure>
+        <img src="images\cup-2.jpg">
+      </figure>
+      <p>사진 설명 : Lorem ipsum dolor sit amet, consectetur adipisicing elit. Ullam, numquam. Neque mollitia esse blanditiis facere.</p>
+    </div>
+
+    <div class="card">
+      <header>
+        <h3>사진 제목</h3>
+      </header>
+      <figure>
+        <img src="images\cup-3.jpg">
+      </figure>
+      <p>사진 설명 : Lorem ipsum dolor sit amet, consectetur adipisicing elit. Ullam, numquam. Neque mollitia esse blanditiis facere.</p>
+    </div> 
+    
+    <div class="card">
+      <header>
+        <h3>사진 제목</h3>
+      </header>
+      <figure>
+        <img src="images\cup-4.jpg">
+      </figure>
+      <p>사진 설명 : Lorem ipsum dolor sit amet, consectetur adipisicing elit. Ullam, numquam. Neque mollitia esse blanditiis facere.</p>
+    </div>     
+
+    <div class="card">
+        <header>
+          <h3>사진 제목</h3>
+        </header>
+        <figure>
+          <img src="images\cup-5.jpg">
+        </figure>
+        <p>사진 설명 : Lorem ipsum dolor sit amet, consectetur adipisicing elit. Ullam, numquam. Neque mollitia esse blanditiis facere.</p>
+      </div>
+  
+      <div class="card">
+        <header>
+          <h3>사진 제목</h3>
+        </header>
+        <figure>
+          <img src="images\cup-6.jpg">
+        </figure>
+        <p>사진 설명 : Lorem ipsum dolor sit amet, consectetur adipisicing elit. Ullam, numquam. Neque mollitia esse blanditiis facere.</p>
+      </div>
+  
+      <div class="card">
+        <header>
+          <h3>사진 제목</h3>
+        </header>
+        <figure>
+          <img src="images\cup-7.jpg">
+        </figure>
+        <p>사진 설명 : Lorem ipsum dolor sit amet, consectetur adipisicing elit. Ullam, numquam. Neque mollitia esse blanditiis facere.</p>
+      </div> 
+      
+      <div class="card">
+        <header>
+          <h3>사진 제목</h3>
+        </header>
+        <figure>
+          <img src="images\cup-8.jpg">
+        </figure>
+        <p>사진 설명 : Lorem ipsum dolor sit amet, consectetur adipisicing elit. Ullam, numquam. Neque mollitia esse blanditiis facere.</p>
+      </div>        
+  </div>
+</body>
+</html>

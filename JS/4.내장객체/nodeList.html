@@ -1,0 +1,81 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>노드 리스트</title>
+  <script>
+    window.onload = function(){
+
+      btn1.addEventListener('click', function(){
+        let body = document.querySelector('body');
+
+        let pNode = document.createElement('p');
+        let textNode1 = document.createTextNode('JAVA');
+
+        let textNode2 = document.createTextNode('ORACLE');
+        let textNode3 = document.createTextNode('JSP/SERVLET');
+        let textNode4 = document.createTextNode('SPRING');
+
+        let p1 = document.querySelector('p');
+        // let p2 = document.querySelectorAll('p')[0];
+        let p3 = document.querySelector('#btn1');
+  
+        pNode.appendChild(textNode1);
+        body.insertBefore(pNode,p1);
+        pNode = document.createElement('p');
+        
+        pNode.appendChild(textNode2);
+        body.insertBefore(pNode,p1);
+        // body.insertBefore(pNode,p2);
+        pNode = document.createElement('p');
+  
+        pNode.appendChild(textNode3);
+        // body.appenChild(textNode3);
+        body.insertBefore(pNode,p1);
+        pNode = document.createElement('p');
+
+        pNode.appendChild(textNode4);
+        body.insertBefore(pNode,p1);
+        pNode = document.createElement('p');
+      });
+
+      let ul = document.querySelector('ul');
+      let li = document.querySelector('li');
+
+      let liNode1 = document.createElement('li');
+      let javaNode = document.createTextNode('JAVA');
+      liNode1.appendChild(javaNode);
+      ul.insertBefore(liNode1,li);
+
+      let liNode2 = document.createElement('li');
+      let oracleNode = document.createTextNode('ORACLE');
+      liNode2.appendChild(oracleNode);
+      ul.insertBefore(liNode2,li);
+
+      let liNode3 = document.createElement('li');
+      let jspNode = document.createTextNode('JSP/SERVLET');
+      liNode3.appendChild(jspNode);
+      ul.appendChild(liNode3);
+
+      let liNode4 = document.createElement('li');
+      let springNode = document.createTextNode('SPRING');
+      liNode4.appendChild(springNode);
+      ul.appendChild(liNode4);
+    }
+  </script>
+</head>
+
+<body>
+  <h1>노드 리스트 살펴보기</h1>
+
+  <ul>
+    <li>HTML</li>
+    <li>CSS</li>
+    <li>Javascript</li>
+  </ul>
+  <button id='btn1'>실행</button>
+</body>
+
+</html>

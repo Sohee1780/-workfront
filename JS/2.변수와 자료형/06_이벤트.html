@@ -1,0 +1,96 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=\, initial-scale=1.0">
+    <title>이벤트</title>
+    <script src="06_이벤트.js"></script>
+</head>
+<body>
+    <h1>이벤트</h1>
+    <p>웹 브라우저나 사용자가 행하는 동작</p>
+    <p>웹문서 영역 안에서 이루어지는 동작</p>
+    <ul>
+        <li>마우스이벤트</li>
+        <li>키보드이벤트</li>
+        <li>문서로딩이벤트</li>
+        <li>폼이벤트</li>
+    </ul>
+
+    <h2>1. 이벤트 모델의 종류</h2>
+    <h3>1) 고전 이벤트 모델</h3>
+    <p>
+        요소 객체가 가지고 있는 이벤트 속성에 이벤트 핸들러를 연결하는 방법이다.<br>
+        이벤트 객체를 제거할 수 있는데 제거하고자 한다면
+        해당 이벤트 속성 값에 null을 대입하면 된다.
+    </p>
+    <button id='btn1'>고전 이벤트</button>
+
+    <h3>2) 인라인 이벤트 모델</h3>
+    <button onclick="alert('안녕하세요');">인라인 이벤트</button>
+
+    <h3>3) 표준 이벤트 모델</h3>
+    <p>
+        w3c에서 공식적으로 지정한 이벤트 모델<br>
+        한 번에 여러 개의 이벤트 핸들러 설정이 가능하다.
+    </p>
+    <button id='btn3'>표준 이벤트</button>
+
+    <h2>2. 이벤트가 발생한 요소 객체에 접근하는 방법</h2>
+    <p>
+        이벤트가 발생한 요소 객체는 내부적으로
+        이벤트 발생 정보를 담고 있는 객체를 매개변수로 전달한다.<br>
+        이벤트 객체를 통해서 해당 요소 개게에 접근이 가능하고
+        콜백 함수의 종류에 따라 this로 접근이 가능하다.<br>
+        콜백함수 : 다른코드의 인수로서 넘겨주는 실행가능한 코드
+    </p>
+    <button id='btn4'>고전 이벤트</button>
+    <button onclick="test();">인라인 이벤트</button>
+    <button id='btn5'>표준 이벤트</button>
+
+    <h2>3. 태그별 기본적으로 가지고 있는 이벤트 제거</h2>
+    <p>
+        기본 이벤트를 가지고 있는 요소<br>
+
+        a : 클릭 시 href 속성에 제시되어 있는 페이지를 요청하는 기본 이벤트 보유<br>
+        submit : 클릭 시 입력 양식 제출 후 페이지를 다시 로딩하는 기본 이벤트 보유<br><br>
+
+        기본 이벤트가 있는 요소에 onclick 이벤트를 설정하면
+        이 코드가 우선적으로 먼저 실행되고 그 다음에 기본 이벤트가 실행된다.<br>
+        태그에 기본적으로 설정되어 있는 이벤트를 제거하기 위해서는
+        이벤트 핸들러의 return값을 false로 하면된다. <br>
+    <pre>
+    - 실행순서 - 
+    1. 이벤트핸들러 실행
+        - 이벤트핸들러의 반환값이 false이면 기본 이벤트를 실행하지 않는다!
+    2. 기본이벤트 실행
+    </pre>
+    <a href='http://www.naver.com'>네이버로 이동</a><br>
+    <a href='http://www.naver.com' onclick='alert("네이버 바로가기")'>네이버로 이동</a><br>
+    <a href='http://www.naver.com' onclick='return false;'>네이버로 이동</a><br>
+    <a href='http://www.naver.com' onclick='alert("네이버 바로가기"); return false;'>네이버로 이동</a><br>
+    </p>
+
+    <h3>1) 기본 이벤트 제거 1</h3>
+    <!-- fasle값을 받아서 다시 return해 줘야함 -->
+    <form onsubmit='return passwordCheck()'>
+        <label for="pass1">비밀번호 : </label>
+        <input type="password" name="pass1" id="pass1"><br>
+        <label for="pass2">비밀번호 확인 : </label>
+        <input type="password" name="pass2" id="pass2"><br><br>
+
+        <!-- <input type="submit" value="제출" onclick='return passwordCheck()'> -->
+        <input type="submit" value="제출">
+    </form>
+
+    <h3>2) 기본 이벤트 제거 2</h3>
+    <form>
+        <label for='userId'>아이디 : </label>
+        <input type='text' name='userId' id='userId'><br>
+        영문자, 숫자로만 총 5~12자 사이로 입력해주세요.<br><br>
+
+        <input type='submit' id='submit' value='회원가입'>
+    </form>
+</body>
+</html>

@@ -1,0 +1,86 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>로또생성기</title>
+    <style>
+        .ball{
+            width: 50px;
+            height: 50px;
+            margin: 10px;
+            line-height: 50px;
+            text-align: center;
+            border-radius: 50%;
+            border: 1px solid #ccc;
+            /* inline-block으로 띄우면 화이트스페이스?가 들어가서 한칸씩 떨어졌다가 로또 뽑으면
+                조금씪 붙어버림 그럴경우엔 float으로 띄워주면 됨 */
+            /* display: inline-block; */
+            float: left;
+            box-shadow: 1px 1px 5px 0px #999
+                , inset 1px 1px 5px 0px white;
+
+            background-color: skyblue;
+            font-weight: 800;
+            color: white;
+        }
+    </style>
+    <script>
+        window.onload = function() {
+            // 1. 화면이 모두 로드 된 이후 실행
+            // window.onload  = function() {...}
+            // 2. 버튼을 선택, div 선택
+            // document.getElementById('id')
+            // 3. 로또 번호 생성
+            // 4. 버튼을 클릭하면 div에 생성된 번호를 출력
+            console.log('화면 로딩');
+            let btn1 = document.getElementById('btn1');
+            let lottoDiv = document.querySelector('div[class=lottoDiv]');
+
+            // 3. 버튼이 클릭되면 div를 초기화
+            btn1.onclick = function() {
+                let nums= [0,0,0,0,0];
+                lottoDiv.innerHTML='';
+
+                for(let i=0; i<5; i++) {
+                    nums[i] = parseInt((Math.random()*50)+1);
+                }
+
+                nums.forEach(function(num){
+                    lottoDiv.innerHTML += `<div class='ball'>${num}</div>`;
+                });
+                
+                // querySelectorAll사용해서 class가 ball인 div를 모두 선택해서 반복문으로 선택
+                let ballList = document.querySelectorAll('div[class=ball]');
+                for(let i=0; i<ballList.length; i++) {
+                    let color = getColor();
+                    ballList[i].style.backgroundColor = color;
+                }
+
+                // for(let num of nums) {
+                //     lottoDiv.innerHTML += `<div class='ball'>${num}</div>`;
+                // }
+            }
+
+            function getColor(){
+                let color = `rgb(${parseInt(Math.random()*256)},${parseInt(Math.random()*256)},${parseInt(Math.random()*256)})`;
+                return color;
+            }  
+        }
+    </script>
+</head>
+
+<body>
+    <h1>로또 생성기</h1>
+    <button id='btn1'>로또번호 생성하기</button>
+    <div class='lottoDiv'>
+        <div class='ball'>1</div>
+        <div class='ball'>1</div>
+        <div class='ball'>1</div>
+        <div class='ball'>1</div>
+        <div class='ball'>1</div>
+    </div>
+</body>
+
+</html>

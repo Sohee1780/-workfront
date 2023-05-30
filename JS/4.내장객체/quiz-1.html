@@ -1,0 +1,74 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>연습문제 1</title>  
+  <link rel="stylesheet" href="css/quiz-1.css">
+  <script>
+    window.onload = ()=>{
+
+      document.querySelector('button').addEventListener('click', function(e){
+
+        let tr = document.createElement('tr');
+        let td1 = document.createElement('td');
+        let td2 = document.createElement('td');
+
+        let name = document.querySelector('#username').value;
+        let major = document.querySelector('#major').value;
+
+        // let test1 = document.createTextNode(name);
+        // let test2 = document.createTextNode(major);
+
+        td1.innerHTML=name;
+        td2.innerHTML=major;
+
+        // td1.appendChild(test1);
+        // td2.appendChild(test2);
+
+        tr.appendChild(td1);
+        tr.appendChild(td2);
+
+        let tbody = document.querySelector('#attendant > tbody');
+
+        tbody.appendChild(tr);
+
+        // 버튼이 1개인 경우 submit 버튼으로 동작
+        // 기본이벤트를 제거
+        e.preventDefault();
+      });
+
+    }
+  </script>
+</head>
+<body>
+  <div id="container">
+    <h1>참가자 명단</h1>
+    <form>
+      <ul id="userInput">  
+        <li>
+          <label for="username">이 름</label>
+          <input type="text" id="username">
+        </li>    
+        <li>
+          <label for="major">전 공</label>
+          <input type="text" id="major">
+        </li>           
+      </ul>
+      <button id='btn1'>등록하기</button>      
+    </form>
+    
+    <table id="attendant">
+      <thead>
+        <tr>
+          <th>이 름</th>
+          <th>전 공</th>
+        </tr>
+      </thead>
+      <tbody>
+      </tbody>
+    </table>
+  </div>
+</body>
+</html>

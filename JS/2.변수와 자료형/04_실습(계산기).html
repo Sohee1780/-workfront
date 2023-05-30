@@ -1,0 +1,145 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>계산기 실습</title>
+	<style>
+		button{
+			font-size: 1.5em;
+			font-weight: bold;
+			width: 50px;
+			height: 50px;
+		}
+		#result{
+			height: 50px;
+			font-size: 2em;
+			font-weight: bold;
+			line-height: 50px;
+			text-align: right;
+			padding-right: 10px;
+			width: 210px;
+			border: 1px solid black;
+		}
+	</style>
+
+</head>
+<body>
+    <h1>계산기 실습</h1>
+
+    <hr>
+
+    <div>
+		<table>
+			<tr>
+				<td colspan="4">
+					<div id="result">0</div>
+				</td>
+			</tr>
+			<tr>
+				<td>
+					<button id="left"  >(</button>
+				</td>
+				<td>
+					<button id="right"  >)</button>
+				</td>
+				<td>
+					<button id="percent"  >%</button>
+				</td>
+				<td>
+					<button id="clear"  >AC</button>
+				</td>
+			</tr>
+			<tr>
+				<td>
+					<button id="seven"  >7</button>
+				</td>
+				<td>
+					<button id="eight"  >8</button>
+				</td>
+				<td>
+					<button id="nine"  >9</button>
+				</td>
+				<td>
+					<button id="devide"  >/</button>
+				</td>
+			</tr>
+			<tr>
+				<td>
+					<button id="four"  >4</button>
+				</td>
+				<td>
+					<button id="five" >5</button>
+				</td>
+				<td>
+					<button id="six"  >6</button>
+				</td>
+				<td>
+					<button id="astric"  >*</button>
+				</td>
+			</tr>
+			<tr>
+				<td>
+					<button id="one"  >1</button>
+				</td>
+				<td>
+					<button id="two"  >2</button>
+				</td>
+				<td>
+					<button id="three"  >3</button>
+				</td>
+				<td>
+					<button id="minus"  >-</button>
+				</td>
+			</tr>
+			<tr>
+				<td>
+					<button id="zero"  >0</button>
+				</td>
+				<td>
+					<button id="dot"  >.</button>
+				</td>
+				<td>
+					<button id="equal"  >=</button>
+				</td>
+				<td>
+					<button id="plus" >+</button>
+				</td>
+			</tr>
+		</table>
+	</div>
+	
+	<script>
+		// 화면에 버튼을 모두 선택
+		let buttons = document.getElementsByTagName('button');
+		
+		// 반복문을 이요해서 버튼을 하나씩 꺼내와서 클릭 이벤트를 추가
+		for(button of buttons){
+			button.addEventListener('click', function(){
+				console.log(this.innerText);
+			});
+		}
+
+		function buttonClick(buttonText){
+			// 값이 출력되는 요소
+			let result = document.querySelector('#result')
+
+			if(buttonText == 'AC') {
+				// text 0으로 초기화
+				result.innerHTML='';
+			}else if(buttonText == '='){
+				//result 계산
+				result.innerText = eval(result.innerText);
+			}else{
+				if(result.innerHTML == '0') {
+					result.innerHTML=buttonText;
+				}else {
+					result.innerHTML+=buttonText;
+				}
+			}
+
+		}
+	</script>
+</body>
+</html>

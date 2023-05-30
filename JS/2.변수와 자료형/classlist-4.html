@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>classList 활용하기</title>
+  <link rel="stylesheet" href="css/main.css">
+  <link rel="stylesheet" href="css/style.css">
+  <style>
+    .dark{
+      background-color:#222;
+      color:#eee;
+    }
+  </style>
+</head>
+<body>
+
+  <button id='mode'>모드변경</button>
+  <h1 id="title">My Profile</h1>
+  <div id="profile">
+    <img src="images/pf.png" alt="도레미">
+    <div id="desc">
+      <p class="user">이름 : 도레미</p>
+      <p class="user">주소 : somewhere</p>
+      <p class="user">연락처 : 1234-5678</p>
+    </div>
+  </div>
+
+  <script>
+    title.onclick = ()=>{
+      // 1. 클릭시 class속성의에 clicked를 추가
+      // title.classList.add('clicked');
+
+      // 2. class속성에 포함되어 있는지 확인 후 없으면 추가, 있으면 삭제
+      // if(!title.classList.contains('clicked')){
+      //   title.classList.add('clicked');
+      // } else{
+      //   title.classList.remove('clicked');
+      // }
+
+      // 3. toggle
+      title.classList.toggle('clicked');
+    }
+
+    // 실습
+    // p 요소가 클릭되면 blue-italic 적용
+    //  document.querySelector('#desc p') desc에서 맨 앞의 p하나 선택
+    const userName = document.querySelector('#desc :nth-child(1)');
+    userName.onclick = ()=>{
+      userName.classList.toggle('blue-italic');
+    }
+    const userAdress = document.querySelector('#desc :nth-child(2)');
+    userAdress.onclick = ()=>{
+      userAdress.classList.toggle('blue-italic');
+    }
+
+    const userTell = document.querySelector('#desc :nth-child(3)');
+    userTell.onclick = ()=>{
+      userTell.classList.toggle('blue-italic');
+    }
+
+
+    mode.onclick = ()=>{
+      document.body.classList.toggle('dark');
+    }
+
+  </script>
+</body>
+</html>

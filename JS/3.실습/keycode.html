@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>키 코드</title>
+  <link rel="stylesheet" href="css/main.css">
+  <style>
+    #result {
+      text-align: center;
+      font-weight:bold;
+      font-size:1.5em;
+      color:crimson;
+    }
+  </style>
+</head>
+<body>
+  <h1>키보드의 아무 키나 눌러보세요</h1>
+
+  <div id="result"></div>
+
+  <script>
+    // getElementsByTagName : 노드리스트가 반환되므로 몇번째 요소인지 알려줘야함
+    // document.getElementsByTagName('body')[0];
+    document.querySelector('body').addEventListener('keydown', function(e){
+      result.innerHTML +=`code : ${e.code} , key : ${e.key} , keyCode : ${e.keyCode}<br>`;
+      console.log(e.code);
+      console.log(e.key);
+
+      console.log(e.keyCode);
+    });
+
+  </script>
+</body>
+</html>

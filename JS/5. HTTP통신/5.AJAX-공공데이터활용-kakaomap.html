@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        *{
+            list-style: none;
+        }
+        .hidden{
+            display: none;
+        }
+    </style>
+    <script src='5.AJAX-공공데이터활용-kakaomap.js'></script>
+    <!-- <script type="text/javascript" src="//dapi.kakao.com/v2/maps/sdk.js?appkey=08ec973a9dbf1e2840a7bc14df6584f7"></script> -->
+    <script type="text/javascript" src="//dapi.kakao.com/v2/maps/sdk.js?appkey=08ec973a9dbf1e2840a7bc14df6584f7&libraries=clusterer"></script>
+</head>
+<body>
+    <div id="map" style="width:100%;height:350px;"></div>
+    <script>
+
+    </script>
+    <form id='campForm'>
+        <div class='hidden'>
+            serviceKey      <input type="text" name='serviceKey' id='' value='J5dFEPgVKZxO2fiPpk%2BZlT3JauqSUVE9WS881ihMC8uk5U34y4v5hsf72u5xo7uUN8wCav3Z5tT%2BIzj%2BXj9FJg%3D%3D'>인증키(서비스키)<br>
+            MobileOS        <input type="text" name='MobileOS' id='' value='ETC'>OS 구분 : IOS (아이폰), AND (안드로이드), WIN (윈도우폰), ETC(기타)<br>
+            MobileApp       <input type="text" name='MobileApp' id='' value='AppTest'>서비스명(어플명)<br>
+            <!-- _type : json형식으로 받아오기 위해 _type에 json값을 넣어 줍니다. -->
+            _type           <input type="text" name='_type' id='' value='json'><br>
+        </div>
+        numOfRows       <input type="text" name='numOfRows' id='' value='100'>한페이지결과수<br>
+        pageNo          <input type="text" name='pageNo' id='' value='1'>페이지번호<br>
+        mapX            <input type="text" name='mapX' id='' value='128.6142847'>경도 : GPS X좌표(WGS84 경도 좌표)<br>
+        mapY            <input type="text" name='mapY' id='' value='36.0345423'>위도 : GPS Y좌표(WGS84 위도 좌표)<br>
+        radius          <input type="text" name='radius' id='' value='20000'>거리 반경 : 거리 반경(단위:m) ,Max값 20000m=20Km<br>
+        <button id='btnCampInfo'>캠핑장 정보 조회</button>
+    </form>
+    <div id='result'></div>
+</body>
+</html>

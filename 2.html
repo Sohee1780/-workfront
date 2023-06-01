@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script>
+        /*
+         이벤트가 발생시 실행되는 함수를 작성 하시오
+        1) id가 btn인 요소가 클릭되면 testJson함수를 실행 합니다.
+        --------- 함수명 : testJson ---------
+        2) 보기의 학생정보를 JSON형식의 문자열로 생성하시오
+        3) 문자열을 JavaScript Object로 변환 후 console창에 출력 하시오
+        4) 변환된 Object를 JSON문자열로 변환후 console창에 출력 하시오
+        */
+        window.onload=()=>{
+            document.querySelector('#btn').addEventListener('click', function(){
+                // 보기의 학생정보를 JSON형식의 문자열로 생성하시오
+                const students = [
+                                {
+                                "name" : "고경희",
+                                "major" : "컴퓨터공학",
+                                "grade" : 2,
+                                "phone" : "010-1111-2222"
+                                },
+                                {
+                                    "name" : "홍길동",
+                                    "major" : "컴퓨터공학",
+                                    "grade" : 2,
+                                    "phone" : "010-2222-3333"
+                                }
+                                ];
+                let studnet = JSON.stringify(students);
+
+                // 문자열을 JavaScript Object로 변환 후 출력
+                let jsObj = JSON.parse(studnet);
+                console.log(jsObj);
+                // 변환된 Object를 JSON문자열로 변환 후 출력
+                console.log(JSON.stringify(jsObj));
+            });
+        }
+    </script>
+</head>
+<body>
+    <button id='btn'>testJson</button>
+</body>
+</html>
